@@ -1,0 +1,48 @@
+{
+    "TS001":{
+    "url":"http://automationexercise.com/",
+    "name":"Automation",
+    "email":"autotest12@gmail.com",
+    "password":"123456", 
+    "day":"23",
+    "month":"March",
+    "year":"2020",
+    "firstName":"Auto",
+    "lastName":"test",
+    "company":"dabba",
+    "address":"bangalore,Manglore",
+    "country":"India",
+    "state":"karnataka",
+    "city":"Hoodi",
+    "zipcode":"582236",
+    "mobileNo":"7894561230"
+
+
+},
+"TS002":{
+    "url":"http://automationexercise.com/",
+    "email":"autotest12@gmail.com",
+    "password":"123456"
+
+},
+
+"TS003":{
+    "url":"http://automationexercise.com/",
+    "email":"manjung654@gmail.com",
+    "password":"123456"
+
+},
+"TS004":{
+    "url":"http://automationexercise.com/",
+    "email":"autotest12@gmail.com",
+    "password":"123456"
+
+},
+
+"TS005":{
+    "url":"http://automationexercise.com/",
+    "name":"Automation",
+    "email":"autotest12@gmail.com"
+
+}
+}

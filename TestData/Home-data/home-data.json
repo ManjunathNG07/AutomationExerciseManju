@@ -1,0 +1,13 @@
+{
+    "TC010":{
+        "url":"http://automationexercise.com/",
+        "email":"abcd2@gmail.com"
+
+    },
+    "TC013":{
+        "url":"http://automationexercise.com/",
+        "email":"abcd2@gmail.com",
+        "qunatity":"4"
+
+    }
+}

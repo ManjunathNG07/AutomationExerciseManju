@@ -1,0 +1,16 @@
+{
+    "TC008":{
+        "url":"http://automationexercise.com/"
+        
+    },
+    "TC009":{
+        "url":"http://automationexercise.com/",
+        "search":"jeans"
+    },
+    "TC023":{
+        "url":"http://automationexercise.com/",
+        "name":"vtest",
+        "email":"abcd@gmail.com",
+        "review":"good good good"
+    }
+}
