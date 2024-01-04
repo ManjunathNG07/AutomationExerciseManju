@@ -94,7 +94,7 @@ export default class CartPage{
     }
 
     async enterExpireMonth(exMonth:string){
-        await this.nameOnCardLocator.fill(exMonth);
+        await this.expireLocator.fill(exMonth);
     }
 
     async enterExpireYear(exYear:string){

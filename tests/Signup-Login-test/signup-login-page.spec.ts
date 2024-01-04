@@ -32,8 +32,8 @@ test("verify user Should able to signup the account and verify user should able 
     await signUpAndLoginPage.enterMobileNumber(data["TS001"].mobileNo);
     await signUpAndLoginPage.clickOnCreateAccountButton();
     await signUpAndLoginPage.verifyAccountIsCreated();
-    // await deleteAccountpage.clickOnDeleteAccountTab();
-    // await deleteAccountpage.verifyAccountDeletedSuccessfully();
+    await deleteAccountpage.clickOnDeleteAccountTab();
+    await deleteAccountpage.verifyAccountDeletedSuccessfully();
     
 })
 

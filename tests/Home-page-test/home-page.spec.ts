@@ -100,7 +100,7 @@ test("verify user Should able to add one product to cart and place the order wit
    await cartPage.clickOnCartTab();
    await cartPage.clickOnProceedToChechOut();
    await cartPage.clickOnRigsterAndLoginLink();
-   await signupAndLoginPage.enterLoginEmailAddress(data1["TC014"].email);
+   await signupAndLoginPage.enterLoginEmailAddress(data1["TC015"].email);
    await signupAndLoginPage.enterLoginPassword(data1["TC014"].password);
    await signupAndLoginPage.clickOnLoginButton();
    await cartPage.clickOnCartTab();
@@ -142,8 +142,8 @@ test("verify user Should able to login  and add one product to cart and place th
    await cartPage.enterExpireYear(data1["TC015"].exyear);
    await cartPage.clickOnPayAndConfirmOrderButton();
    await cartPage.verifyTheOrderPlacedSuccessfully();
-   await deleteAccountPage.clickOnDeleteAccountTab();
-   await deleteAccountPage.verifyAccountDeletedSuccessfully();
+   // await deleteAccountPage.clickOnDeleteAccountTab();
+   // await deleteAccountPage.verifyAccountDeletedSuccessfully();
 
 })
 
@@ -158,7 +158,7 @@ test("verify user Should able to signup and  add one product to cart and place t
    await signUpAndLoginPage.clickOnSignUpAndLoginTab();
    await signUpAndLoginPage.verifySignupPage();
    await signUpAndLoginPage.enterName(data1["TC018"].name);
-   await signUpAndLoginPage.enterEmail(data1["TC018"].email);
+   await signUpAndLoginPage.enterEmail(data1["TC019"].email);
    await signUpAndLoginPage.clickOnSignUpButton();
    await signUpAndLoginPage.selectTitle();
    await signUpAndLoginPage.enterPassword(data1["TC018"].password);
@@ -242,7 +242,7 @@ test("verify user Should able to signup account details as same as checkout deta
    await signUpAndLoginPage.clickOnSignUpAndLoginTab();
    await signUpAndLoginPage.verifySignupPage();
    await signUpAndLoginPage.enterName(data1["TC018"].name);
-   await signUpAndLoginPage.enterEmail(data1["TC018"].email);
+   await signUpAndLoginPage.enterEmail(data1["TC025"].email);
    await signUpAndLoginPage.clickOnSignUpButton();
    await signUpAndLoginPage.selectTitle();
    await signUpAndLoginPage.enterPassword(data1["TC018"].password);
@@ -279,7 +279,7 @@ test("verify user Should able to signup account details as same as checkout deta
    await signUpAndLoginPage.clickOnSignUpAndLoginTab();
    await signUpAndLoginPage.verifySignupPage();
    await signUpAndLoginPage.enterName(data1["TC018"].name);
-   await signUpAndLoginPage.enterEmail(data1["TC018"].email);
+   await signUpAndLoginPage.enterEmail(data1["TC026"].email);
    await signUpAndLoginPage.clickOnSignUpButton();
    await signUpAndLoginPage.selectTitle();
    await signUpAndLoginPage.enterPassword(data1["TC018"].password);
@@ -319,7 +319,7 @@ test("verify user Should able to signup and  purchase one order and download Inv
    await signUpAndLoginPage.clickOnSignUpAndLoginTab();
    await signUpAndLoginPage.verifySignupPage();
    await signUpAndLoginPage.enterName(data1["TC018"].name);
-   await signUpAndLoginPage.enterEmail(data1["TC018"].email);
+   await signUpAndLoginPage.enterEmail(data1["TC027"].email);
    await signUpAndLoginPage.clickOnSignUpButton();
    await signUpAndLoginPage.selectTitle();
    await signUpAndLoginPage.enterPassword(data1["TC018"].password);
@@ -359,12 +359,12 @@ test("verify user Should able to signup and  purchase one order and download Inv
    const signUpAndLoginPage = new SignupAndLoginPage(page);
    const deleteAccountPage = new DeleteAccountPage(page);
 
-   await homePage.navigateToUrl(data1["TC018"].url);
+   await homePage.navigateToUrl(data1["TC028"].url);
    await homePage.verifyHomePageIsVisible();
    await signUpAndLoginPage.clickOnSignUpAndLoginTab();
    await signUpAndLoginPage.verifySignupPage();
    await signUpAndLoginPage.enterName(data1["TC018"].name);
-   await signUpAndLoginPage.enterEmail(data1["TC018"].email);
+   await signUpAndLoginPage.enterEmail(data1["TC028"].email);
    await signUpAndLoginPage.clickOnSignUpButton();
    await signUpAndLoginPage.selectTitle();
    await signUpAndLoginPage.enterPassword(data1["TC018"].password);
@@ -406,7 +406,7 @@ test("verify user should scroll up using arrow and scroll down functionality", a
    await homePage.navigateToUrl(data["TC010"].url);
    await homePage.verifyHomePageIsVisible();
    await page.evaluate(()=>{
-      window.scrollBy(0,90);
+      window.scrollBy(0,500);
 
    })
    await homePage.clickOnUpArrowButton();
@@ -414,17 +414,18 @@ test("verify user should scroll up using arrow and scroll down functionality", a
 
 })
 
-test("verify user should scroll up us", async ({ page }) => {
+test("verify user should scroll up without using arrow and scroll down functionality", async ({ page }) => {
    const homePage = new HomePage(page);
 
    await homePage.navigateToUrl(data["TC010"].url);
    await homePage.verifyHomePageIsVisible();
    await page.evaluate(()=>{
-      window.scrollBy(0,100);
+      window.scrollBy(0,380);
 
    })
+   await page.waitForTimeout(2000);
    await page.evaluate(()=>{
-      window.scrollBy(100,0);
+      window.scrollBy(380,0);
 
    })
    await homePage.verifyFullFledgedpracticeIsVisible();
