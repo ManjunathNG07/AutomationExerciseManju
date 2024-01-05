@@ -23,6 +23,10 @@ export default class HomePage {
     billingAddress: Locator;
     uparrowlocator: Locator;
     fullfligedLocator: Locator;
+    KidsCategory: Locator;
+    kidDress: Locator;
+    apiList: Locator;
+    apiPage: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -40,6 +44,8 @@ export default class HomePage {
         this.womenCategory = page.locator('[href="#Women"]');
         this.womenDress = page.locator("//a[.='Dress ']").first();
         this.menCategory = page.locator('[href="#Men"]');
+        this.KidsCategory=page.locator("//a[contains(.,'Kids')]").first();
+        this.kidDress = page.locator("//a[.='Dress ']").last();
         this.menTshirt = page.locator("//a[.='Tshirts ']");
         this.dressesvisible = page.locator('[class="features_items"]');
         this.hAndMBrand=page.locator('[href="/brand_products/H&M"]');
@@ -49,6 +55,8 @@ export default class HomePage {
 
         this.uparrowlocator=page.locator('[id="scrollUp"]');
         this.fullfligedLocator=page.locator("//h2[.='Full-Fledged practice website for Automation Engineers']");
+        this.apiList=page.locator('[class="apis_list"]').first();
+        this.apiPage=page.locator("//b[.='APIs List for practice']");
         
     }
 
@@ -124,6 +132,13 @@ export default class HomePage {
         await this.menTshirt.click();
     }
 
+    async selectKidsCattegory(){
+        await this.KidsCategory.click();
+    }
+    async selectKidsDress(){
+        await this.kidDress.click();
+    }
+
     async selectOneBrand(){
         await this.hAndMBrand.click();
     }
@@ -146,5 +161,13 @@ export default class HomePage {
 
     async verifyFullFledgedpracticeIsVisible(){
         expect(this.fullfligedLocator).toBeTruthy();
+    }
+
+    async clickOnApisListOfPracticeButton(){
+        await this.apiList.click();
+    }
+
+    async verifyApisTestcasesIsVisible(){
+        expect(this.apiPage).toBeTruthy();
     }
 }

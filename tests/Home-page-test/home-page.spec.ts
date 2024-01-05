@@ -8,7 +8,7 @@ import data1 from "../../TestData/cart-data/cart-data.json";
 import data from "../../TestData/Home-data/home-data.json";
 
 
-
+/*
 test("verify user should able to enter email address and 'SUBSCRIPTION' in home page", async ({ page }) => {
    const homePage = new HomePage(page);
 
@@ -430,4 +430,65 @@ test("verify user should scroll up without using arrow and scroll down functiona
    })
    await homePage.verifyFullFledgedpracticeIsVisible();
 
+})
+*/
+
+
+test("TC031:verify user Should able to  add to cart the Branded items in the  home page ", async ({ page }) => {
+   const homePage = new HomePage(page);
+
+   await homePage.navigateToUrl(data["TC010"].url);
+   await homePage.verifyHomePageIsVisible();
+   await homePage.selectOneBrand();
+   await homePage.verifyRelatedDressesVisible();
+   await homePage.addOneProductToAddToCart();
+   await homePage.verifyProductIsAdded();
+
+
+})
+
+
+test("TC032:verify user Should able to add  to cart the product of women category", async ({ page }) => {
+   const homePage = new HomePage(page);
+
+   await homePage.navigateToUrl(data["TC010"].url);
+   await homePage.verifyHomePageIsVisible();
+   await homePage.clickOnWomenCategory();
+   await homePage.selectWomenDress();
+   await homePage.verifyRelatedDressesVisible();
+   await homePage.addOneProductToAddToCart();
+   await homePage.verifyProductIsAdded();
+})
+
+test("TC033:verify user Should able to add  to cart the product of men category", async ({ page }) => {
+   const homePage = new HomePage(page);
+
+   await homePage.navigateToUrl(data["TC010"].url);
+   await homePage.verifyHomePageIsVisible();
+   await homePage.clickOnMenCategory();
+   await homePage.selectMenTShirt();
+   await homePage.verifyRelatedDressesVisible();
+   await homePage.addOneProductToAddToCart();
+   await homePage.verifyProductIsAdded();
+})
+
+test("TC034:verify user Should able to add  to cart the product of Kids category", async ({ page }) => {
+   const homePage = new HomePage(page);
+
+   await homePage.navigateToUrl(data["TC010"].url);
+   await homePage.verifyHomePageIsVisible();
+   await homePage.selectKidsCattegory();
+   await homePage.selectKidsDress();
+   await homePage.verifyRelatedDressesVisible();
+   await homePage.addOneProductToAddToCart();
+   await homePage.verifyProductIsAdded();
+})
+
+test("TC035:verify user Should navigate to Api list and verify testcases are visible", async ({ page }) => {
+   const homePage = new HomePage(page);
+
+   await homePage.navigateToUrl(data["TC010"].url);
+   await homePage.verifyHomePageIsVisible();
+   await homePage.clickOnApisListOfPracticeButton();
+   await homePage.verifyApisTestcasesIsVisible();
 })
